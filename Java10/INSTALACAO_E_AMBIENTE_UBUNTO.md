@@ -1,28 +1,32 @@
 ##### INSTALAÇÃO DO AMBIENTE UBUNTO 20 :rowing_man:
 
-	###### 	INSTALANDO O JAVA 10
-	
-	<!-- adiciona repositorio, pois é comum que o repositorio default do apt 		  não contenha o java 10 -->
-	
-	$ sudo add-apt-repository ppa:linuxuprising/java
-	
-	$ sudo apt update
-	
-	$ sudo apt install oracle-java10-installer
-	
-	$ java --version
+```markdown
+##### INSTALANDO O JAVA 10
+
+<!-- adiciona repositorio, pois é comum que o repositorio default do apt 		  não contenha o java 10 -->
+
+$ sudo add-apt-repository ppa:linuxuprising/java
+
+$ sudo apt update
+
+$ sudo apt install oracle-java10-installer
+
+$ java --version
+```
 
 
 
 ##### FERRAMENTAS DE BUILD
 
-	###### 	<!-- GRADLE ferramenta poderosa que permiti o build das aplicações java de forma mais performática e fácil injeção de dependências e libs Java-->	
-	
-	###### 	GRADLE
-	
-	https://gradle.org/
-	
-	https://gradle.org/install/
+```markdown
+###### 	<!-- GRADLE ferramenta poderosa que permiti o build das aplicações java de forma mais performática e fácil injeção de dependências e libs Java-->	
+
+###### 	GRADLE
+
+https://gradle.org/
+
+https://gradle.org/install/
+```
 
  - versão 4.7
  - ganhando espaço no android
@@ -66,7 +70,25 @@
 
 	$ mvn -v
 
+##### WRAPPERS 
 
+​	<!-- permite que todos os desenvolvedores obtenham a mesma versão do 	ambiente de desenvolvimento evitando incompatibilidades -->
+
+	###### 	gradle	
+
+​	$ gradle wrapper 
+
+​	$ ./gradle -v
+
+
+
+	###### 	maven
+
+​	$ mvn -N io.takari:maven:wrapper
+
+​	$ ./mvnw -v
+
+ 
 
 
 
