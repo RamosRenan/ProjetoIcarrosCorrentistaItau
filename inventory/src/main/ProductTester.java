@@ -1,8 +1,60 @@
 package main;
-import product.Product;;
+ 
+import java.io.*;
+import java.util.*;
+import crud.*;
 
 public class ProductTester {
-	public static void main(String[] args) {
+	@SuppressWarnings("resource")
+	public static void main(String[] args) throws InterruptedException, IOException {
+
+		/* ***************************
+		 * Part 2 do projeto		 *
+		 * ***************************/
+		
+		Scanner in = new Scanner(System.in); 
+		
+		int op = 00;
+		
+		System.out.print("MENU\n");
+		System.out.print("\t Opções: \n");
+		System.out.print("\t 1 Cadastrar produto.\n");
+		System.out.print("\t 2 Sair.  \n");
+		
+				
+		while(op != 2) {			
+			try {
+				op = in.nextInt();
+				break;
+			} catch (InputMismatchException e) {
+				// TODO: handle exception
+ 				op = 00;
+ 				System.out.print("\t VOCÊ DIGITOU UMA OPÇÃO INVÁLIDA ={ \n");
+ 				Thread.sleep(2000L);
+   				ProductTester.main(null);
+			}			
+		}				
+		
+		switch (op) {
+		case 1:
+			CadastraProduto cadastrar  = new CadastraProduto();
+			cadastrar.cadastrar();
+			ProductTester.main(null);
+			break;
+
+		case 2:
+			
+			break;
+
+		default:
+			break;
+		}
+		
+		/* ***********************************************
+		 * 	Part 1 do projeto							 *
+		 *****************
+		 *********************************		
+		
 		// cria novo object de produto sem parametros no construtor
 		Product productNP1 = new Product(); // productNP means productNoParameters1
 		
@@ -44,7 +96,10 @@ public class ProductTester {
 		System.out.println(productP2.toString()+"\n"); // print para user product 2	
 		System.out.println(productP3.toString()+"\n"); // print para user product 3	
 		System.out.println(productP4.toString()+"\n"); // print para user product 4	
-		
-		
+				
+		//
+		*/
+
+				
 	}// final methos main
 }// final class ProductTester

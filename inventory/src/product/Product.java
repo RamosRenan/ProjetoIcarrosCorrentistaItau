@@ -2,11 +2,20 @@ package product;
 
 public class Product {
 	// instance fields declarations
-	public String 	name;
-	public float	price;
-	public int		qtd;
-	public int		id_product;
+	private String 	name;
+	private float	price;
+	private int		qtd;
+	private int		id_product;
+	private boolean status;
 	
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
 	// without parameters
 	public Product() {
 		
@@ -26,9 +35,16 @@ public class Product {
 		
 		String displayProduct = "";
 		
-		displayProduct =  "id_product: "+this.getId_product()+"\n"+"name: "+this.getName()+"\n"+"Quantity: "+this.getQtd()+"\n"+"price: "+this.getPrice();
+		displayProduct =  "id_product: "+this.getId_product()+"\n"+"name: "+this.getName()+
+				"\n"+"Quantity: "+this.getQtd()+"\n"+"price: "+this.getPrice()+
+				"\n"+"Status: "+(this.isStatus() == true ? "Disponivel" : "Indisponivel")+
+				"\n"+"Stock value: "+this.valueProduct();
 		
 		return displayProduct;
+	}
+	
+	public float valueProduct() {
+		return (this.getPrice() * (float)this.getQtd());
 	}
 
 	public String getName() {
