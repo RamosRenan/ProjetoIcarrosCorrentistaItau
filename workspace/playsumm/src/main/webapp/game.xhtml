@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h2> Play sum</h2>
+        <h3>  Seu score: <span style="color:blue;">#{cDIControlGame.score}</span></h3>
+
+        <!-- section para mostrar numeros -->
+        <section>
+            <div align="center">
+                <h1>Some: </h1>
+                <h:outputLabel><h3>#{cDIControlGame.num1}</h3></h:outputLabel>
+                <h:outputLabel><h3>#{cDIControlGame.num2}</h3></h:outputLabel>
+            </div>
+        </section>
+
+        <hr/>
+
+        <!-- section para formulario resposta -->
+        <section>
+            <div align="center">
+                <h:form>
+                    <h:inputText value="#{cDIControlGame.reposta}"/>
+                    <br/><br/>
+                    <h:commandButton value="reponder" action="#{cDIControlGame.responder()}"/>
+                </h:form>
+            </div>
+        </section>
+
+        <hr/>
+
+        <!-- section para mostrar ranking -->
+        <section>
+            <div>
+                <h3> Ranking</h3>
+                <h:dataTable value="#{cDIShowPlayers.showPlayers()}" var="players">
+                    <h:column><u>Player: #{players.name} / Score: #{players.accruedPoint}</u></h:column>
+                </h:dataTable>
+            </div>
+        </section>
+
+        <hr/>
+
+        <!-- section para info session -->
+        <section>
+            <div>
+                <h5>Info session:</h5>
+                <h:outputText value="creationTime: #{session.creationTime}"/><br/>
+                <h:outputText value="id: #{session.id}"/><br/>
+                <h:outputText value="valueNames #{session.valueNames}"/><br/>
+            </div>
+        </section>
+    </h:body>
+</html>
+

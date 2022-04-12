@@ -1,0 +1,10 @@
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/general/TimeOut.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/JakartaRestConfiguration.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/interfaces/Player.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/ejb/EjbCreatePlayer.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/general/Timer.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/cdi/CDICreatePlayer.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/resources/JakartaEE8Resource.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/cdi/CDIGames.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/model/PlayerModel.java
+/home/renan/Ambiente/workspace/playsum/src/main/java/com/utfpr/playsum/cdi/CDIGame.java

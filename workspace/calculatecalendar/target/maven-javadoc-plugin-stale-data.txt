@@ -1,0 +1,45 @@
+@options
+@packages
+-classpath
+'/home/renan/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'1.8'
+-sourcepath
+'/home/renan/Ambiente/workspace/calculatecalendar/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2022. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'calculatecalendar-1.0-SNAPSHOT 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/javase/8/docs/api' '/home/renan/Ambiente/workspace/calculatecalendar/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'calculatecalendar-1.0-SNAPSHOT 1.0-SNAPSHOT API'
+com.mycompany.calculatecalendar
+com.mycompany.calculatecalendar.resources
+/home/renan/.m2/repository/jakarta/platform/jakarta.jakartaee-api/8.0.0/jakarta.jakartaee-api-8.0.0.jar = 1648645577000
+/home/renan/Ambiente/workspace/calculatecalendar/src/main/java = 1649201867000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/overview-tree.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/help-doc.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/package-list = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/script.js = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/allclasses-frame.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/overview-frame.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/stylesheet.css = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/index.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/index-all.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/allclasses-noframe.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/overview-summary.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/constant-values.html = 1649203237000
+/home/renan/Ambiente/workspace/calculatecalendar/target/apidocs/deprecated-list.html = 1649203237000

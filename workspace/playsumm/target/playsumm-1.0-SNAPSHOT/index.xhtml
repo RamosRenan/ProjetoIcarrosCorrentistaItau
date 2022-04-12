@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <!-- section para title -->
+        <section>
+            <div align="center">
+                <h1>Play sum</h1>
+            </div>
+        </section>
+
+        <hr/>
+
+        <!-- section para inserir nome 'fomrulario' -->
+        <section>
+            <div align="center">
+                <h:form>
+                    <h:outputLabel value="Nome: " id="Nome"/><br/>
+                    <h:inputText value="#{cDINewPlayer.name}"/><br/><br/>
+                    <h:commandButton value="Send" action="#{cDINewPlayer.addPlayer()}"/>
+                    <h:commandButton value="Play" action="#{cDINewPlayer.play()}"/>
+                    <h:commandButton value="Ver jogadores" action="#{cDIShowPlayers.showPlayerss()}"/>
+                </h:form>
+            </div>
+        </section>
+
+        <hr/>
+
+        <!-- section para info session -->
+        <section>
+            <div>
+                <h5>Info session:</h5>
+                <h:outputText value="creationTime: #{session.creationTime}"/><br/>
+                <h:outputText value="id: #{session.id}"/><br/>
+                <h:outputText value="valueNames #{session.valueNames}"/><br/>
+            </div>
+        </section>
+    </h:body>
+</html>
+

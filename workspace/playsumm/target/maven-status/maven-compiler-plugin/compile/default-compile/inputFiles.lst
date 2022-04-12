@@ -1,0 +1,11 @@
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/cdi/CDIControlGame.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/ejb/EJBCreatePlayer.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/resources/JakartaEE8Resource.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/model/PlayerModel.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/JakartaRestConfiguration.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/interfaces/Player.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/cdi/CDINewPlayer.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/ejb/EJBControllGame.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/entity/SimulateDbPlayers.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/ejb/EJBShowPlayers.java
+/home/renan/Ambiente/workspace/playsumm/src/main/java/com/utfpr/playsumm/cdi/CDIShowPlayers.java

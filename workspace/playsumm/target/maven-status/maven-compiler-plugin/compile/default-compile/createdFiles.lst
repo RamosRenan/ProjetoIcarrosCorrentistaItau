@@ -1,0 +1,11 @@
+com/utfpr/playsumm/model/PlayerModel.class
+com/utfpr/playsumm/ejb/EJBShowPlayers.class
+com/utfpr/playsumm/cdi/CDIShowPlayers.class
+com/utfpr/playsumm/ejb/EJBCreatePlayer.class
+com/utfpr/playsumm/JakartaRestConfiguration.class
+com/utfpr/playsumm/resources/JakartaEE8Resource.class
+com/utfpr/playsumm/ejb/EJBControllGame.class
+com/utfpr/playsumm/cdi/CDINewPlayer.class
+com/utfpr/playsumm/entity/SimulateDbPlayers.class
+com/utfpr/playsumm/interfaces/Player.class
+com/utfpr/playsumm/cdi/CDIControlGame.class

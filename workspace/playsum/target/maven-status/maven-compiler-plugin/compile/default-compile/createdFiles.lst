@@ -1,0 +1,10 @@
+com/utfpr/playsum/general/TimeOut.class
+com/utfpr/playsum/general/Timer.class
+com/utfpr/playsum/JakartaRestConfiguration.class
+com/utfpr/playsum/interfaces/Player.class
+com/utfpr/playsum/resources/JakartaEE8Resource.class
+com/utfpr/playsum/ejb/EjbCreatePlayer.class
+com/utfpr/playsum/cdi/CDICreatePlayer.class
+com/utfpr/playsum/model/PlayerModel.class
+com/utfpr/playsum/cdi/CDIGames.class
+com/utfpr/playsum/cdi/CDIGame.class
