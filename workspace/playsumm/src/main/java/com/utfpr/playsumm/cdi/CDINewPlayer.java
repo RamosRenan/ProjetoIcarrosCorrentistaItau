@@ -36,9 +36,17 @@ public class CDINewPlayer implements Serializable {
 
     // add player joined with session
     public void addPlayer() {
-        if (httpSessionCDINewPlayer.getAttribute("name") == null) {
+        if (this.name != null) {
+
+            System.out.println("Session name: " + httpSessionCDINewPlayer.getAttribute("name"));
+
             bCreatePlayer.addPlayer(this.name, httpSessionCDINewPlayer.getId());
             httpSessionCDINewPlayer.setAttribute("name", this.name);
+
+            System.out.println("Session name: " + httpSessionCDINewPlayer.getAttribute("name"));
+
+        } else {
+            return;
         }
     }
 

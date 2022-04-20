@@ -5,13 +5,18 @@
 package com.utfpr.playsumm.ejb;
 
 import com.sun.net.httpserver.HttpServer;
+import com.utfpr.playsumm.messagedrivenbeans.SendMessage;
 import com.utfpr.playsumm.model.PlayerModel;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
+import javax.jms.ObjectMessage;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -29,7 +34,7 @@ public class EJBControllGame {
     private int num2;
     private boolean right = false;
     private String user;
-    private int score;
+    private static int score;
 
     public EJBControllGame() {
         randomNumber = new Random();
@@ -37,8 +42,8 @@ public class EJBControllGame {
 
     @PostConstruct
     private void wichUser() {
-        user = (String) httpSessionEJBControllGame.getAttribute("name");
-        System.out.println("--> Wich user is now: " + user);
+        this.user = (String) httpSessionEJBControllGame.getAttribute("name");
+        System.out.println("--> Wich user is now: " + httpSessionEJBControllGame.getAttribute("name"));
     }
 
     @Inject
@@ -47,17 +52,28 @@ public class EJBControllGame {
     @EJB
     private EJBShowPlayers eJBShowPlayers;
 
+    @EJB
+    SendMessage message;
+
     public int getRandomNumber1() {
-        num1 = randomNumber.nextInt(99);
+        num1 = randomNumber.nextInt(999);
         return num1;
     }
 
     public int getRandomNumber2() {
-        num2 = randomNumber.nextInt(99);
+        num2 = randomNumber.nextInt(999);
         return num2;
     }
 
     public String answer() {
+        this.user = (String) httpSessionEJBControllGame.getAttribute("name");
+        System.out.println("--> method answer() wich user is now: " + httpSessionEJBControllGame.getAttribute("name"));
+
+//        if(!httpSessionEJBControllGame.getAttribute("name").equals("renan")){
+//            FacesMessage facesMessage = new FacesMessage("Só eu ganho");
+//            FacesContext.getCurrentInstance().addMessage(null, facesMessage);
+//            return "";
+//        }
         if (isRight()) {
             System.out.println("--> Resposta correta \n");
             System.out.print("\n--------------------------------------------------------\n");
@@ -69,14 +85,16 @@ public class EJBControllGame {
                 System.out.println("--> USer: " + p.getName());
             }
 
-            eJBShowPlayers.showPlayers().stream().filter((n) -> n.getName().equals(this.user)).findAny().get().storePoints();
+            playerModels.stream().filter((n) -> n.getName().equals(this.user)).findAny().get().storePoints();
 
-            score = eJBShowPlayers.showPlayers().stream().filter((n) -> n.getName().equals(this.user)).findAny().get().getAccruedPoint();
+            score = playerModels.stream().filter((n) -> n.getName().equals(this.user)).findAny().get().getAccruedPoint();
 
-            System.out.print("\n--------------------------------------------------------\n");
-            System.out.print("\n Mostrando lista de players com SCORE");
-            for (PlayerModel p : playerModels) {
-                System.out.println("--> User: " + p.getName() + " / " + "Score: " + p.getAccruedPoint());
+            PlayerModel model = playerModels.stream().filter((n) -> n.getName().equals(this.user)).findAny().get();
+
+            if (score >= 5) {
+                for (PlayerModel p : playerModels) {
+                    message.send(p);
+                }
             }
         }
 

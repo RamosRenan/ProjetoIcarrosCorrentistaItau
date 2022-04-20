@@ -5,6 +5,7 @@
 package com.utfpr.playsumm.entity;
 
 import com.utfpr.playsumm.model.PlayerModel;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -15,7 +16,7 @@ import javax.ejb.Singleton;
  * @author renan
  */
 @Singleton
-public class SimulateDbPlayers {
+public class SimulateDbPlayers implements Serializable{
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

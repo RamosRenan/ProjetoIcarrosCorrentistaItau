@@ -6,8 +6,11 @@ package com.utfpr.playsumm.ejb;
 
 import com.utfpr.playsumm.entity.SimulateDbPlayers;
 import com.utfpr.playsumm.model.PlayerModel;
+import com.utfpr.playsumm.validation.ValidationUser;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -18,6 +21,7 @@ public class EJBCreatePlayer {
 
     private final PlayerModel PLAYER_FAKE;
     private PlayerModel player;
+    private ValidationUser validationUser;
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")
@@ -31,8 +35,13 @@ public class EJBCreatePlayer {
     private SimulateDbPlayers dbPlayers;
 
     // cria player
-    public void addPlayer(String name, String sessionId) {
+    public void addPlayer(String name, String sessionId) 
+    {
         this.player = new PlayerModel(name);
+        validationUser = new ValidationUser(this.player);
+        boolean valid  = validationUser.vilidForm();
+        if(valid)
+            return; 
         this.player.setSessionId(sessionId);
         dbPlayers.getPlayerModel().add(this.player);
         System.out.println("--> Criando usuario: " + name);

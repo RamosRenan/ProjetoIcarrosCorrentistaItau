@@ -1,0 +1,6 @@
+com/origin/planner/conn/ConnectionDB.class
+com/origin/planner/Main.class
+com/origin/filter/request/VerifyIpAddress.class
+com/origin/planner/resources/JakartaEE8Resource.class
+com/origin/filter/request/TesteFilter.class
+com/origin/planner/JakartaRestConfiguration.class

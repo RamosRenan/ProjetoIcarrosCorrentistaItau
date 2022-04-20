@@ -25,9 +25,9 @@ public class CDIShowPlayers implements Serializable {
      */
     public CDIShowPlayers() {
     }
-    
-@EJB
-private EJBShowPlayers eJBShowPlayers;
+
+    @EJB
+    private EJBShowPlayers eJBShowPlayers;
 
     public List<PlayerModel> showPlayers() {
         return eJBShowPlayers.showPlayers();

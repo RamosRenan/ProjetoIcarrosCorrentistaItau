@@ -6,6 +6,7 @@ package com.utfpr.playsumm.ejb;
 
 import com.utfpr.playsumm.entity.SimulateDbPlayers;
 import com.utfpr.playsumm.model.PlayerModel;
+import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Stateful;
@@ -15,7 +16,7 @@ import javax.ejb.Stateful;
  * @author renan
  */
 @Stateful
-public class EJBShowPlayers {
+public class EJBShowPlayers implements Serializable{
 
     // Add business logic below. (Right-click in editor and choose
     // "Insert Code > Add Business Method")

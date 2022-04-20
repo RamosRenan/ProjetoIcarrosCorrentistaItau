@@ -9,7 +9,7 @@
         <!-- section para title -->
         <section>
             <div align="center">
-                <h1>Play sum</h1>
+                <h1>Play summ</h1>
             </div>
         </section>
 
@@ -18,12 +18,15 @@
         <!-- section para inserir nome 'fomrulario' -->
         <section>
             <div align="center">
-                <h:form>
+                <h:form id="myform">
                     <h:outputLabel value="Nome: " id="Nome"/><br/>
-                    <h:inputText value="#{cDINewPlayer.name}"/><br/><br/>
-                    <h:commandButton value="Send" action="#{cDINewPlayer.addPlayer()}"/>
-                    <h:commandButton value="Play" action="#{cDINewPlayer.play()}"/>
-                    <h:commandButton value="Ver jogadores" action="#{cDIShowPlayers.showPlayerss()}"/>
+                    <h:inputText value="#{cDINewPlayer.name}" id="userName"/><br/><br/>
+                    <div style="width: 100%; height: 10px; ">
+                        <h:message style="color: crimson" for="userName"/>                    
+                    </div><br/>
+                    <h:commandButton value="Cadastrar jogador" action="#{cDINewPlayer.addPlayer()}"/><br/><br/>
+                    <h:commandButton value="Play" action="#{cDINewPlayer.play()}"/><br/><br/>
+                    <h:commandButton value="Ver jogadores" action="#{cDIShowPlayers.showPlayerss()}"/><br/><br/>
                 </h:form>
             </div>
         </section>
@@ -39,6 +42,8 @@
                 <h:outputText value="valueNames #{session.valueNames}"/><br/>
             </div>
         </section>
+
+        
     </h:body>
 </html>
 
