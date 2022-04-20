@@ -1,0 +1,5 @@
+com/origin/messagedrivenbeans/JakartaRestConfiguration.class
+com/origin/cdibean/SendMCDI.class
+com/origin/messagedrivenbeans/MessageDB.class
+com/origin/messagedrivenbeans/SendMessage.class
+com/origin/messagedrivenbeans/resources/JakartaEE8Resource.class

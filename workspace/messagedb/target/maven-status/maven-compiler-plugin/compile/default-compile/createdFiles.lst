@@ -1,0 +1,8 @@
+com/origin/messagedb/SendMessage.class
+com/origin/messagedb/sr/Send.class
+com/origin/messagedb/MessageDB.class
+com/origin/messagedb/JakartaRestConfiguration.class
+ReceiveMB.class
+com/origin/messagedb/resources/JakartaEE8Resource.class
+SendMCDI.class
+com/origin/messagedb/sr/Recive.class
