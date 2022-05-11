@@ -1,39 +1,28 @@
 package com.correntista.components;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.Graphics2D;
-import java.awt.GridBagLayout;
 import java.awt.Image;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.SpringLayout;
-import javax.swing.border.Border;
 
-import com.correntista.singleton.jpanel.JPanelSingle;
 
 public class LoginForm implements ActionListener
 {
@@ -47,7 +36,7 @@ public class LoginForm implements ActionListener
 	private final JLabel J_LABEL_PASS = new JLabel("Password: ");
 	
 	private JTextField fieldLogin = new JTextField(10);
- 	private JTextField fieldPass = new JTextField(10);
+ 	private JPasswordField fieldPass = new JPasswordField(10);
 	
 	JButton button =  new JButton("Save");
 	
@@ -98,6 +87,8 @@ public class LoginForm implements ActionListener
 		ImageIcon icon = new ImageIcon(image);
 		
 		this.button.setIcon(icon);
+		
+		this.fieldLogin.addActionListener(this);
 	}
 	
 	private void preparForm()
@@ -117,13 +108,21 @@ public class LoginForm implements ActionListener
 	}
 	
 	@Override
-	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) 
+	{
 		// TODO Auto-generated method stub		
 
 		if("login".equals(e.getActionCommand()))
 		{
-			System.out.println("Realizando login ... ");			
+			String txtLogin = this.fieldLogin.getText();
+			//System.out.println("Realizando login ... "+txtLogin+" "+Arrays.toString(this.fieldPass.getPassword()));	
+			
+			authUser();
 		}
 	}
 	
+	private boolean authUser()
+	{
+		return false;
+	}
 }
