@@ -10,6 +10,7 @@ import java.util.*;
  */
 public class Media
 {
+	// defino que serão apenas quatro notas informadas pelo usuario
 	private int qtd_scores = 4;
 
 	private float notas;
@@ -37,6 +38,7 @@ public class Media
                 {
 			System.out.println("Insira nota_"+(++i));
 		
+			// se usuario inserir valor errado variaveis retornam para seus valores default e recomeça a inserção das notas
 			try
 			{
 				notas +=sc.nextFloat();
