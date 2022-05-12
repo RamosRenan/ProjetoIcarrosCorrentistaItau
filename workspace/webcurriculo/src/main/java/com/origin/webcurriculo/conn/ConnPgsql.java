@@ -18,6 +18,8 @@ public class ConnPgsql {
 	
 	private Session sessionConnDB = null;
 	
+	private SessionFactory sessionFactory = null;
+	
 	/*
 	 * @Bean 
 	 * @Author Renan
@@ -28,22 +30,14 @@ public class ConnPgsql {
 	@Bean
 	private void configPgsql()
 	{
-		
-		// working with Entity manager factory e entity manager
-		if(entityManager.isOpen()) {
-			System.out.println(" ---> EntityManagerFactory: Pgsql conn is open");
-		}
-		
 		// working with session factory
-		SessionFactory sessionFactory = entityManager.getEntityManagerFactory().unwrap(SessionFactory.class);
-		
-		sessionConnDB = sessionFactory.openSession();
+		sessionFactory = entityManager.getEntityManagerFactory().unwrap(SessionFactory.class);
 		
 		if(sessionFactory.isOpen())
 		{
 			System.out.println("--> SessionFactory: Session factory is open");
 			System.out.println("--> SessionFactory: Fechando session factory ... ");
-			//sessionFactory.close();
+			sessionFactory.close();
 		}
 	}
 	
