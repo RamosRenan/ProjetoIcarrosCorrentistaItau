@@ -47,7 +47,7 @@ public class main {
 						if (!validador.estaValido()) {
 							continue;
 						}
-						cliente.setAg(ag);
+						cliente.setNome(ag);
 						//validar se nao tem caracteres, estipular limite ?
 						System.out.println("Entre com a conta: ");
 						msg = "Entre com a conta: ";
