@@ -1,9 +1,12 @@
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException{
 		// TODO Auto-generated method stub
 		
 		//Ag, Conta, Nome, Email, Telefone, Saldo
@@ -94,7 +97,26 @@ public class main {
 					break;
 			//Gravar arquivo
 				case "3":
-					break;
+					try {
+						//estabelecer path
+						FileWriter file = new FileWriter("registros.txt");
+						
+						//variavel para gravacao em arquivo
+						PrintWriter gravarArquivo = new PrintWriter(file);
+						
+						// Gravando informacoes
+						for (int i=0; i<6; i++) {
+							gravarArquivo.printf(clientes.get(i)+"\n");
+						}
+						
+						//fecha arquivo
+						file.close();
+						System.out.println("Informacao gravada");
+						break;
+					}catch(Exception e) {
+						System.out.println("Error : " + e);
+					}
+			
 			//Ler arquivo
 				case "4":
 					break;
