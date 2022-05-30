@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 // contém todas as funçöes para validar as entradas de usuário
 public class Validador {
@@ -75,4 +76,29 @@ public class Validador {
 		
 		return this.valido;
 	}
+	
+	public String empty(String validar, String mensagem) {
+		
+		boolean check = true;
+		String valor = null;
+		Scanner s = new Scanner(System.in);
+		while(check == true) {
+			if(validar.isBlank()) {
+				
+				System.out.println("Entrada invalida ! " + mensagem);
+				valor = s.next();
+				if(valor.isBlank()){
+					check = true;
+					}
+				else{
+					check = false;	
+					}
+			}
+		}
+		
+		return valor;
+		
+	}
+	
+	
 }

@@ -13,9 +13,10 @@ public class main {
 		// int opcao = 0,conta;
 		// double saldo;
 		// troquei os tipos para evitar estouro de exception
-		String ag,nome,email,telefone,conta,saldo,opcao = "";
+		String ag,nome,email,telefone,conta,saldo,msg,opcao = "";
 		Scanner s = new Scanner(System.in);
-		ArrayList<String> clientes = new ArrayList<String>();
+		Cliente cliente = new Cliente();
+		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		
 		while (!opcao.equals("5")) {
 			
@@ -39,52 +40,66 @@ public class main {
 					try {
 						//validar e formatar ?
 						System.out.println("Entre com a agencia: ");
+						msg = "Entre com a agencia: ";
 						ag = s.next();
+						validador.empty(ag, msg);
 						validador.validarApenasNumeros(ag);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(ag);
+						cliente.setAg(ag);
 						//validar se nao tem caracteres, estipular limite ?
 						System.out.println("Entre com a conta: ");
+						msg = "Entre com a conta: ";
 						conta = s.next();
+						validador.empty(conta, msg);
 						validador.validarApenasNumeros(conta);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(conta);
+						cliente.setConta(conta);
 						//validar se nao tem numeros ?
 						System.out.println("Entre com o nome: ");
+						msg = "Entre com o nome: "; 
 						nome = s.next();
+						validador.empty(conta, msg);
 						validador.validarNome(nome);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(nome);
+						cliente.setNome(nome);
 						//validar se tem o @mail.com ?
 						System.out.println("Entre com o email: ");
+						msg = "Entre com o email: ";
 						email = s.next();
+						validador.empty(email, msg);
 						validador.validarEmail(email);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(email);
+						cliente.setEmail(email);
 						//validar e formatar ? (99)99999-9999
 						System.out.println("Entre com o telefone: ");
+						msg = "Entre com o telefone: ";
 						telefone = s.next();
+						validador.empty(telefone, msg);
 						validador.validarApenasNumeros(telefone);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(telefone);
+						cliente.setTelefone(telefone);
 						//validar formato e formatar com R$ ?
 						System.out.println("Entre com o saldo: ");
+						msg = "Entre com o saldo: ";
 						saldo = s.next();
+						validador.empty(saldo, msg);
 						validador.validarSaldo(saldo);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						clientes.add(saldo);
+						cliente.setSaldo(saldo);
+						
+						clientes.add(cliente);
 						
 						System.out.println("Cliente cadastrado !");
 						
@@ -105,7 +120,7 @@ public class main {
 						PrintWriter gravarArquivo = new PrintWriter(file);
 						
 						// Gravando informacoes
-						for (int i=0; i<6; i++) {
+						for (int i=0; i<clientes.size(); i++) {
 							gravarArquivo.printf(clientes.get(i)+"\n");
 						}
 						
