@@ -82,10 +82,11 @@ public class Validador {
 		boolean check = true;
 		String valor = null;
 		Scanner s = new Scanner(System.in);
-		while(check == true) {
+		System.out.println("oiiii" + validar);
+		while(check == true) { 
 			if(validar.isBlank()) {
 				
-				System.out.println("Entrada invalida ! " + mensagem);
+				System.out.println("Entrada invalida ! \n" + mensagem);
 				valor = s.next();
 				if(valor.isBlank()){
 					check = true;
@@ -93,6 +94,9 @@ public class Validador {
 				else{
 					check = false;	
 					}
+			}
+			else {
+				check = false;
 			}
 		}
 		
