@@ -13,7 +13,7 @@ Passos
 
 2 . Com o jdk instalado em sua máquina digite no terminal:
 
-2.1 java -jar <path lombok jar>
+2.1 java -jar "path lombok jar"
   
 obs: sera apresentado umajanela com instruções para vc instalar o lombok no eclipse, se não aparecer vc deve apontar o lugar onde esta instalado seu eclipse
   
