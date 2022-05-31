@@ -22,7 +22,7 @@ public class Main {
 		
 		Scanner s = new Scanner(System.in);
 		
-		Cliente cliente = new Cliente();
+		Cliente cliente; 
 		
  		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		
@@ -44,6 +44,8 @@ public class Main {
 			switch(opcao){
 				//Cadastrar clientes	
 				case "1":
+					cliente = new Cliente();
+					
 					//adicionar validacao para cada caso ?
 					try {
 						// validar e formatar ?
@@ -125,10 +127,13 @@ public class Main {
 					
 				//Listar clientes	
 				case "2":
+					System.out.println(StringsUtils.INFO_TITLE_REGISTRED_CLIENTS);
+					int ind = 0;
 					for (Iterator<Cliente> iterator = clientes.iterator(); iterator.hasNext();) {
 						Cliente ShowCliente = (Cliente) iterator.next();
-						System.out.println(ShowCliente.toString());
+						System.out.println(++ind+" --> "+ShowCliente.toString());
 					}
+					System.out.println("\n");
 					break;
 					
 				//Gravar arquivo
