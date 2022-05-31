@@ -1,108 +1,115 @@
+package com.icarros;
+
 import java.util.Scanner;
 
-// contém todas as funçöes para validar as entradas de usuário
+import com.icarros.global.StringsUtils;
+
+// contï¿½m todas as funï¿½ï¿½es para validar as entradas de usuï¿½rio
 public class Validador {
-	
+
 	private boolean valido;
 	private String mensagemErro;
-	
+
 	// Regex para cada campo
-	// apenas UM número entre 1 e 5
+	// apenas UM nï¿½mero entre 1 e 5
 	private String escolhaRegex = "^[1-5]{1}$";
-	// um ou mais números entre 0 e 9
+	// um ou mais nï¿½meros entre 0 e 9
 	private String numRegex = "^[0-9]+$";
-	// no mínimo um @ no meio de qualquer caracter pros dois lados
+	// no mï¿½nimo um @ no meio de qualquer caracter pros dois lados
 	private String emailRegex = "^\\S+@\\S+$";
-	// filtra qualquer número
+	// filtra qualquer nï¿½mero
 	private String nomeRegex = "^\\D+$";
-	
+
 	public Validador() {
 		this.valido = true;
 		this.mensagemErro = "";
 	}
-	
+
 	public void validarMenu(String escolha) {
-		
+
 		if (!escolha.matches(this.escolhaRegex)) {
 			this.valido = false;
-			this.mensagemErro = "Escolha uma opção do menu.";
+			this.mensagemErro = "Escolha uma opï¿½ï¿½o do menu.";
 		}
 	}
-	
-	// para campos que não aceitam números
+
+	// para campos que nï¿½o aceitam nï¿½meros
 	public void validarNome(String nome) {
-		
+
 		if (!nome.matches(this.nomeRegex)) {
 			this.valido = false;
-			this.mensagemErro = "Não é permitido números.";
+			this.mensagemErro = "Nï¿½o ï¿½ permitido nï¿½meros.";
 		}
 	}
-	
-	// para campos como conta e agência
+
+	// para campos como conta e agï¿½ncia
 	public void validarApenasNumeros(String campo) {
-		
+
 		if (!campo.matches(this.numRegex)) {
 			this.valido = false;
-			this.mensagemErro = "Entrada inválida. Informe somente números.";
+			this.mensagemErro = "Entrada invï¿½lida. Informe somente nï¿½meros.";
 		}
 	}
-	
-	// apenas verifico estrutura básica: xxxx@xxxx
+
+	// apenas verifico estrutura bï¿½sica: xxxx@xxxx
 	public void validarEmail(String email) {
-		
-		if(!email.matches(this.emailRegex)) {
+
+		if (!email.matches(this.emailRegex)) {
 			this.valido = false;
-			this.mensagemErro = "Entre com um email válido.";
+			this.mensagemErro = "Entre com um email vï¿½lido.";
 		}
 	}
-	
+
 	public void validarSaldo(String saldo) {
 
 		try {
 			Double.parseDouble(saldo);
 		} catch (Exception e) {
 			this.valido = false;
-			this.mensagemErro = "Saldo inválido. informe apenas valores.";
+			this.mensagemErro = "Saldo invï¿½lido. informe apenas valores.";
 		}
-		
+
 	}
-	
-	// retorna estado de validação e mensagem de erro caso falso
+
+	// retorna estado de validaï¿½ï¿½o e mensagem de erro caso falso
 	public boolean estaValido() {
-		
+
 		if (!this.valido) {
 			System.out.println(this.mensagemErro);
 		}
-		
+
 		return this.valido;
 	}
-	
+
 	public String empty(String validar, String mensagem) {
-		
+
 		boolean check = true;
 		String valor = null;
 		Scanner s = new Scanner(System.in);
-		System.out.println("oiiii" + validar);
-		while(check == true) { 
-			if(validar.isBlank()) {
+		System.out.println(StringsUtils.INFO_INPUT_SCANN + validar + "\n");
+		while (check == true) {
+			if (validar.isBlank()) {
 				
-				System.out.println("Entrada invalida ! \n" + mensagem);
+				System.out.println(StringsUtils.INFO_INPUT_SCANN + mensagem);
+				
 				valor = s.next();
-				if(valor.isBlank()){
+				
+				if (valor.isBlank()) {
 					check = true;
-					}
-				else{
-					check = false;	
-					}
-			}
-			else {
+					
+					// nova instancia para nÃ£o trazer sujeira 
+					s = new Scanner(System.in);
+				} else {
+					check = false;
+				}
+				
+			} else {
 				check = false;
 			}
 		}
-		
+
 		return valor;
-		
+
 	}
-	
-	
+
 }

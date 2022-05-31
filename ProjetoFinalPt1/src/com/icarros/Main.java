@@ -1,120 +1,140 @@
+package com.icarros;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
-public class main {
+import com.icarros.global.StringsUtils;
+
+public class Main {
 
 	public static void main(String[] args) throws IOException{
-		// TODO Auto-generated method stub
-		
-		//Ag, Conta, Nome, Email, Telefone, Saldo
-		// int opcao = 0,conta;
-		// double saldo;
-		// troquei os tipos para evitar estouro de exception
+ 		
+		/* 
+		 * Ag, Conta, Nome, Email, Telefone, Saldo
+		   int opcao = 0,conta;
+		   double saldo;
+		 * troquei os tipos para evitar estouro de exception
+		 */
 		String ag,nome,email,telefone,conta,saldo,msg,opcao = "";
+		
 		Scanner s = new Scanner(System.in);
+		
 		Cliente cliente = new Cliente();
-		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
+		
+ 		ArrayList<Cliente> clientes = new ArrayList<Cliente>();
 		
 		while (!opcao.equals("5")) {
 			
 			Validador validador = new Validador();
 			
-			System.out.println("************************************");
-			System.out.println("Selecione a operacao:\n1- Cadastrar cliente \n2- Listar clientes \n3- Gravar em arquivo  \n4- Ler arquivo \n5- Sair\n");
-			System.out.println("************************************");
+			// mostra opções do menu
+			System.out.println(StringsUtils.SHOW_MENU_APP);
+			
 			opcao = s.next();
 
 			validador.validarMenu(opcao);
-			// ao verificar, se entrada conter erro, exibe erro e for�a o loop
+			
+			// ao verificar, se entrada conter erro, exibe erro e for�a o loop
 			if (!validador.estaValido()) {
 				continue;
-			}
-			
+			}			
 			switch(opcao){
-			//Cadastrar clientes	
+				//Cadastrar clientes	
 				case "1":
 					//adicionar validacao para cada caso ?
 					try {
-						//validar e formatar ?
-						System.out.println("Entre com a agencia: ");
-						msg = "Entre com a agencia: ";
-						ag = s.next();
+						// validar e formatar ?
+						System.out.println(StringsUtils.REQUEST_AG);
+						msg = StringsUtils.REQUEST_AG;
+						ag = s.nextLine();
 						validador.empty(ag, msg);
 						validador.validarApenasNumeros(ag);
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setNome(ag);
+						
 						//validar se nao tem caracteres, estipular limite ?
-						System.out.println("Entre com a conta: ");
-						msg = "Entre com a conta: ";
-						conta = s.next();
+						System.out.println(StringsUtils.REQUEST_NUM_CONTA);
+						msg = StringsUtils.REQUEST_NUM_CONTA;
+						conta = s.nextLine();
 						validador.empty(conta, msg);
 						validador.validarApenasNumeros(conta);
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setConta(conta);
+						
 						//validar se nao tem numeros ?
-						System.out.println("Entre com o nome: ");
-						msg = "Entre com o nome: "; 
-						nome = s.next();
+						System.out.println(StringsUtils.REQUEST_NOME);
+						msg = StringsUtils.REQUEST_NOME; 
+						nome = s.nextLine();
 						validador.empty(conta, msg);
-						validador.validarNome(nome);
+						validador.validarNome(nome);						
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setNome(nome);
+						
 						//validar se tem o @mail.com ?
-						System.out.println("Entre com o email: ");
-						msg = "Entre com o email: ";
-						email = s.next();
+						System.out.println(StringsUtils.REQUEST_EMAIL);
+						msg = StringsUtils.REQUEST_EMAIL;
+						email = s.nextLine();
 						validador.empty(email, msg);
 						validador.validarEmail(email);
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setEmail(email);
+						
 						//validar e formatar ? (99)99999-9999
-						System.out.println("Entre com o telefone: ");
-						msg = "Entre com o telefone: ";
-						telefone = s.next();
+						System.out.println(StringsUtils.REQUEST_CELLPHONE);
+						msg = StringsUtils.REQUEST_CELLPHONE;
+						telefone = s.nextLine();
 						validador.empty(telefone, msg);
 						validador.validarApenasNumeros(telefone);
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setTelefone(telefone);
+						
 						//validar formato e formatar com R$ ?
-						System.out.println("Entre com o saldo: ");
-						msg = "Entre com o saldo: ";
-						saldo = s.next();
+						System.out.println(StringsUtils.REQUEST_BALANCE);
+						msg = StringsUtils.REQUEST_BALANCE;
+						saldo = s.nextLine();
 						validador.empty(saldo, msg);
 						validador.validarSaldo(saldo);
 						if (!validador.estaValido()) {
 							continue;
 						}
+						
 						cliente.setSaldo(saldo);
 						
 						clientes.add(cliente);
 						
-						System.out.println("Cliente cadastrado !");
-						
-					}catch (Exception e){
-						System.out.println(e);
+						System.out.println(StringsUtils.SUCCESS_REGISTRY);						
+					}
+					catch (Exception e){
+						System.out.println(e.getCause() + e.getMessage());
 					}
 					break;
-			//Listar clientes	
+					
+				//Listar clientes	
 				case "2":
+					for (Iterator<Cliente> iterator = clientes.iterator(); iterator.hasNext();) {
+						Cliente ShowCliente = (Cliente) iterator.next();
+						System.out.println(ShowCliente.toString());
+					}
 					break;
-			//Gravar arquivo
+					
+				//Gravar arquivo
 				case "3":
 					try {
 						//estabelecer path
-						FileWriter file = new FileWriter("registros.txt");
+						FileWriter file = new FileWriter(StringsUtils.NAME_FILE);
 						
 						//variavel para gravacao em arquivo
 						PrintWriter gravarArquivo = new PrintWriter(file);
@@ -126,21 +146,24 @@ public class main {
 						
 						//fecha arquivo
 						file.close();
-						System.out.println("Informacao gravada");
+						System.out.println(StringsUtils.SUCCESS_WRITE_FILE);
 						break;
-					}catch(Exception e) {
-						System.out.println("Error : " + e);
+					}
+					catch(Exception e) {
+						System.out.println(StringsUtils.ERROR_WRITE_FILE + e.getCause() + e.getMessage());
 					}
 			
-			//Ler arquivo
+			    //Ler arquivo
 				case "4":
 					break;
-			//Sair
+					
+			    //Sair
 				case "5":
 					s.close(); // evitando memory leak
-					System.out.println("EXIT");
+					System.out.println(StringsUtils.EXIT);
 					break;
-			}			
-		}	
-	}
-}
+					
+			}// switch			
+		}// while	
+	}// main
+}// class Main
