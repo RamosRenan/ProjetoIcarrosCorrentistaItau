@@ -33,7 +33,7 @@ public class Main {
 			// mostra opções do menu
 			System.out.println(StringsUtils.SHOW_MENU_APP);
 			
-			opcao = s.next();
+			opcao = s.nextLine();
 
 			validador.validarMenu(opcao);
 			
@@ -49,17 +49,19 @@ public class Main {
 						// validar e formatar ?
 						System.out.println(StringsUtils.REQUEST_AG);
 						msg = StringsUtils.REQUEST_AG;
+						s.reset();
 						ag = s.nextLine();
-						validador.empty(ag, msg);
+ 						validador.empty(ag, msg);
 						validador.validarApenasNumeros(ag);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						cliente.setNome(ag);
+						cliente.setAg(ag);
 						
 						//validar se nao tem caracteres, estipular limite ?
 						System.out.println(StringsUtils.REQUEST_NUM_CONTA);
 						msg = StringsUtils.REQUEST_NUM_CONTA;
+						s.reset();
 						conta = s.nextLine();
 						validador.empty(conta, msg);
 						validador.validarApenasNumeros(conta);
@@ -72,7 +74,7 @@ public class Main {
 						System.out.println(StringsUtils.REQUEST_NOME);
 						msg = StringsUtils.REQUEST_NOME; 
 						nome = s.nextLine();
-						validador.empty(conta, msg);
+						validador.empty(nome, msg);
 						validador.validarNome(nome);						
 						if (!validador.estaValido()) {
 							continue;
@@ -109,8 +111,7 @@ public class Main {
 						validador.validarSaldo(saldo);
 						if (!validador.estaValido()) {
 							continue;
-						}
-						
+						}						
 						cliente.setSaldo(saldo);
 						
 						clientes.add(cliente);
