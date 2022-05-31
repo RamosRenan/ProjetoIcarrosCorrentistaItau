@@ -4,9 +4,8 @@
 
 Projeto final
 
-#  Para Adicionar o projeto lombok em seu ambiente de desenvolvimento (Eclipse)
+#  Para Adicionar o projeto lombok em seu ambiente de desenvolvimento (Eclise)
 obs: É necessário instalar a lib lombok no eclise para que em desenvolvimento os recursos do lombok estejam disponiveis
-
 Pasos
 
 1 . Barixar o jar do lombok  https://projectlombok.org/
