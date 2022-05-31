@@ -10,6 +10,12 @@ public class Cliente {
 	private String conta;
 	private String saldo;
 	
+	@Override
+	public String toString() {		
+		String obj = (this.ag + "," + this.conta + "," + this.email + "," + this.nome + "," + this.saldo + "," + this.telefone);
+		return obj;		
+	}
+	
 	public String getAg() {
 		return ag;
 	}

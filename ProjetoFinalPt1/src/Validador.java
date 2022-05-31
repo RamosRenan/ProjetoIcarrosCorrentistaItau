@@ -77,32 +77,4 @@ public class Validador {
 		return this.valido;
 	}
 	
-	public String empty(String validar, String mensagem) {
-		
-		boolean check = true;
-		String valor = null;
-		Scanner s = new Scanner(System.in);
-		System.out.println("oiiii" + validar);
-		while(check == true) { 
-			if(validar.isBlank()) {
-				
-				System.out.println("Entrada invalida ! \n" + mensagem);
-				valor = s.next();
-				if(valor.isBlank()){
-					check = true;
-					}
-				else{
-					check = false;	
-					}
-			}
-			else {
-				check = false;
-			}
-		}
-		
-		return valor;
-		
-	}
-	
-	
 }

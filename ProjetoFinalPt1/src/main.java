@@ -40,19 +40,16 @@ public class main {
 					try {
 						//validar e formatar ?
 						System.out.println("Entre com a agencia: ");
-						msg = "Entre com a agencia: ";
 						ag = s.next();
-						validador.empty(ag, msg);
 						validador.validarApenasNumeros(ag);
 						if (!validador.estaValido()) {
 							continue;
 						}
-						cliente.setNome(ag);
+						cliente.setAg(ag);
 						//validar se nao tem caracteres, estipular limite ?
 						System.out.println("Entre com a conta: ");
 						msg = "Entre com a conta: ";
 						conta = s.next();
-						validador.empty(conta, msg);
 						validador.validarApenasNumeros(conta);
 						if (!validador.estaValido()) {
 							continue;
@@ -62,7 +59,6 @@ public class main {
 						System.out.println("Entre com o nome: ");
 						msg = "Entre com o nome: "; 
 						nome = s.next();
-						validador.empty(conta, msg);
 						validador.validarNome(nome);
 						if (!validador.estaValido()) {
 							continue;
@@ -72,7 +68,6 @@ public class main {
 						System.out.println("Entre com o email: ");
 						msg = "Entre com o email: ";
 						email = s.next();
-						validador.empty(email, msg);
 						validador.validarEmail(email);
 						if (!validador.estaValido()) {
 							continue;
@@ -82,7 +77,6 @@ public class main {
 						System.out.println("Entre com o telefone: ");
 						msg = "Entre com o telefone: ";
 						telefone = s.next();
-						validador.empty(telefone, msg);
 						validador.validarApenasNumeros(telefone);
 						if (!validador.estaValido()) {
 							continue;
@@ -92,14 +86,11 @@ public class main {
 						System.out.println("Entre com o saldo: ");
 						msg = "Entre com o saldo: ";
 						saldo = s.next();
-						validador.empty(saldo, msg);
 						validador.validarSaldo(saldo);
 						if (!validador.estaValido()) {
 							continue;
 						}
 						cliente.setSaldo(saldo);
-						
-						clientes.add(cliente);
 						
 						System.out.println("Cliente cadastrado !");
 						
