@@ -12,6 +12,13 @@ import com.icarros.components.ButtonsAppUtils;
 import com.icarros.components.Formulario;
 import com.icarros.components.Tables;
 
+
+/**
+ * @author renan barbosa
+ * 
+ * @apiNote calsse responsavel por reunir componentes da IU
+ * Esta classe é acionada por meio de interfaces 
+ */
 public class PanelJFrame extends BaseWindowApp {
 
 	private Formulario formulario;
