@@ -8,14 +8,20 @@ import java.util.Scanner;
 
 import com.icarros.global.StringsUtils;
 
+
+/**
+ * @apiNote Inicio da aplicação 
+ * @author renan
+ * @author caio
+ * @author matheus
+ *  
+ */
 public class Main {
 
 	public static void main(String[] args) throws IOException{
  		
 		/* 
-		 * Ag, Conta, Nome, Email, Telefone, Saldo
-		   int opcao = 0,conta;
-		   double saldo;
+		 * Variaveis utilizadas no scanner, Ag, Conta, Nome, Email, Telefone, Saldo
 		 * troquei os tipos para evitar estouro de exception
 		 */
 		String ag,nome,email,telefone,conta,saldo,msg,opcao = "";
