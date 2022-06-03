@@ -73,7 +73,7 @@ public class JPanelController extends JFrame
 				e.printStackTrace();
 			}
 			
-			g.drawImage(imageBackG, 0, 0, this);
+//			g.drawImage(imageBackG, 0, 0, this);
 		}
 	};
 	
