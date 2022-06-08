@@ -92,6 +92,8 @@ public class main {
 						}
 						cliente.setSaldo(saldo);
 						
+						Formatador.formatar(cliente); // formatando campos de uma vez depois de validar
+						
 						System.out.println("Cliente cadastrado !");
 						
 					}catch (Exception e){

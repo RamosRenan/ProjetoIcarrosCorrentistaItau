@@ -67,6 +67,17 @@ public class Validador {
 		
 	}
 	
+	// função para fazer o loop de entrada caso campo seja vazio
+	public boolean campoVazio(String campo) {
+		
+		if (campo.isBlank()) {
+			System.out.println("Campo não pode ser vazio, favor digitar novamente:");
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	// retorna estado de validação e mensagem de erro caso falso
 	public boolean estaValido() {
 		
