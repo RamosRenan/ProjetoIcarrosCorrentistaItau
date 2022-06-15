@@ -83,7 +83,7 @@ public class Validador {
 	}
 	
 	// retorna estado de validação e mensagem de erro caso falso	public boolean estaValido() {
-
+	public boolean estaValido() {
 		if (!this.valido) {
 			System.out.println(this.mensagemErro);
 		}
@@ -91,7 +91,7 @@ public class Validador {
 		return this.valido;
 	}
 
-public String empty(String validar, String mensagem) {
+	public String empty(String validar, String mensagem) {
 
 		boolean check = true;
 		String valor = null;
@@ -120,4 +120,5 @@ public String empty(String validar, String mensagem) {
 
 		return valor;
 
-	}}
+	}
+}
