@@ -1,8 +1,6 @@
-package com.icarros;
+package com.icarros.global;
 
 import java.util.Scanner;
-
-import com.icarros.global.StringsUtils;
 
 // cont�m todas as fun��es para validar as entradas de usu�rio
 public class Validador {
@@ -69,6 +67,14 @@ public class Validador {
 			this.mensagemErro = "Saldo inv�lido. informe apenas valores.";
 		}
 
+	}
+	
+	public void loginRequired(String user, String password) {
+		
+		if(user.isBlank() || password.isBlank()) {
+			this.mensagemErro = StringsUtils.ERROR_REQUIRED_FIELDS;
+			this.valido = false;
+		}
 	}
 	
 // função para fazer o loop de entrada caso campo seja vazio

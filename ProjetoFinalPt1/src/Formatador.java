@@ -1,3 +1,5 @@
+import com.icarros.Cliente;
+
 public class Formatador {
 	
 	// usei tamanhos referenciados no PDF do projeto

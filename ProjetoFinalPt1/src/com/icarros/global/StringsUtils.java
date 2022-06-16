@@ -39,4 +39,5 @@ public class StringsUtils {
 	
 	public static final String INFO_TITLE_REGISTRED_CLIENTS = "\t CLIENTES CADASTRADOS \n";
 
+	public static final String ERROR_REQUIRED_FIELDS = "Insira os campos requiridos!";
 }
