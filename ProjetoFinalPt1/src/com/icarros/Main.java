@@ -1,4 +1,7 @@
 package com.icarros;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -168,6 +171,19 @@ public class Main {
 			
 			    //Ler arquivo
 				case "4":
+					File file = new File(StringsUtils.NAME_FILE);
+					FileReader fileWriter = new FileReader(file);
+					BufferedReader bufferedReader = new BufferedReader(fileWriter);
+					if(bufferedReader.ready())
+					{
+						System.out.println(StringsUtils.PRINT_INFO_WHITHIN_FILE);
+						while(true)
+						{
+							String stringLine = bufferedReader.readLine();
+							if(stringLine == null) break;
+							System.out.println("--> "+stringLine);
+						}
+					}
 					break;
 					
 			    //Sair
