@@ -38,5 +38,7 @@ public class StringsUtils {
 	public static final String INVALID_INPUT_SCANN  = "Entrada invalida ! \n";
 	
 	public static final String INFO_TITLE_REGISTRED_CLIENTS = "\t CLIENTES CADASTRADOS \n";
+	
+	public static final String PRINT_INFO_WHITHIN_FILE = "\t PRINTANDO INFORMAÇÕES DO ARQUIVO \n";
 
 }
